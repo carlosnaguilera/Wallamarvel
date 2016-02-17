@@ -77,11 +77,13 @@
 		0734815B1C73F30800902180 /* Wallamarvel */ = {
 			isa = PBXGroup;
 			children = (
-				0734815C1C73F30800902180 /* AppDelegate.swift */,
-				0734815E1C73F30800902180 /* ViewController.swift */,
-				073481601C73F30800902180 /* Main.storyboard */,
+				073481831C73FBCB00902180 /* Models */,
+				073481841C73FC2E00902180 /* Views */,
+				073481861C73FC6F00902180 /* Controllers */,
+				073481871C73FC8B00902180 /* Stores */,
+				073481881C73FCB100902180 /* Helpers */,
+				073481891C73FDB900902180 /* User Interface */,
 				073481631C73F30800902180 /* Assets.xcassets */,
-				073481651C73F30800902180 /* LaunchScreen.storyboard */,
 				073481681C73F30800902180 /* Info.plist */,
 			);
 			path = Wallamarvel;
@@ -94,6 +96,52 @@
 				073481731C73F30800902180 /* Info.plist */,
 			);
 			path = WallamarvelTests;
+			sourceTree = "<group>";
+		};
+		073481831C73FBCB00902180 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		073481841C73FC2E00902180 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		073481861C73FC6F00902180 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0734815E1C73F30800902180 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		073481871C73FC8B00902180 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		073481881C73FCB100902180 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0734815C1C73F30800902180 /* AppDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		073481891C73FDB900902180 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				073481601C73F30800902180 /* Main.storyboard */,
+				073481651C73F30800902180 /* LaunchScreen.storyboard */,
+			);
+			name = "User Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +436,7 @@
 				073481781C73F30800902180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		073481791C73F30800902180 /* Build configuration list for PBXNativeTarget "WallamarvelTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +445,7 @@
 				0734817B1C73F30800902180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

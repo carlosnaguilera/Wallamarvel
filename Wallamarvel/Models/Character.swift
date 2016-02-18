@@ -177,7 +177,7 @@ class Character {
         guard let imageExtension = self.imageExtension else {
             return nil
         }
-        let imageURLString = imagePath + imageVariant.variantName() + imageExtension
+        let imageURLString = "\(imagePath)/\(imageVariant.variantName())/\(imageExtension)"
         if let imageURL = NSURL(string: imageURLString) {
             return imageURL
         }

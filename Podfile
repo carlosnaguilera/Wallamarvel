@@ -1,6 +1,12 @@
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Alamofire', '~> 3.2'
-pod 'CryptoSwift', '~> 0.2'
+target :Wallamarvel do
+    pod 'Alamofire', '~> 3.2'
+    pod 'CryptoSwift', '~> 0.2'
+end
+
+target :WallamarvelTests do
+    
+end
 

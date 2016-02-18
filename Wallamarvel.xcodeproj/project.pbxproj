@@ -17,6 +17,7 @@
 		076D33EC1C76699100826E88 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33EB1C76699100826E88 /* CharactersViewController.swift */; };
 		076D33ED1C76699100826E88 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33EB1C76699100826E88 /* CharactersViewController.swift */; };
 		076D33F11C7677A200826E88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076D33F31C7677A200826E88 /* Localizable.strings */; };
+		23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */; };
 		B833ED84207EBBFB514A4A2D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12020E3F104F99C546FF89B0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,9 @@
 		076D33F21C7677A200826E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		12020E3F104F99C546FF89B0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.release.xcconfig"; sourceTree = "<group>"; };
+		4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.debug.xcconfig"; sourceTree = "<group>"; };
+		9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallamarvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B833ED84207EBBFB514A4A2D /* Pods.framework in Frameworks */,
+				23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +177,8 @@
 			children = (
 				1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */,
 				EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */,
+				4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */,
+				2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				12020E3F104F99C546FF89B0 /* Pods.framework */,
+				9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,7 +305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A8313FF3A0358A6316B1A933 /* Embed Pods Frameworks */ = {
@@ -312,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA37DA02504162ACF5245837 /* Check Pods Manifest.lock */ = {
@@ -476,7 +484,7 @@
 		};
 		073481771C73F30800902180 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wallamarvel/Info.plist;
@@ -488,7 +496,7 @@
 		};
 		073481781C73F30800902180 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wallamarvel/Info.plist;

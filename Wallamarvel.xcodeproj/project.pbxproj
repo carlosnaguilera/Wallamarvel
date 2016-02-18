@@ -13,6 +13,8 @@
 		073481641C73F30800902180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073481631C73F30800902180 /* Assets.xcassets */; };
 		073481671C73F30800902180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073481651C73F30800902180 /* LaunchScreen.storyboard */; };
 		073481721C73F30800902180 /* WallamarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073481711C73F30800902180 /* WallamarvelTests.swift */; };
+		073541021C751F6A00ECCAAC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073541011C751F6A00ECCAAC /* Character.swift */; };
+		073541031C751F6A00ECCAAC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073541011C751F6A00ECCAAC /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		0734816D1C73F30800902180 /* WallamarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WallamarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		073481711C73F30800902180 /* WallamarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallamarvelTests.swift; sourceTree = "<group>"; };
 		073481731C73F30800902180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073541011C751F6A00ECCAAC /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		073481831C73FBCB00902180 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				073541011C751F6A00ECCAAC /* Character.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073541021C751F6A00ECCAAC /* Character.swift in Sources */,
 				0734815F1C73F30800902180 /* ViewController.swift in Sources */,
 				0734815D1C73F30800902180 /* AppDelegate.swift in Sources */,
 			);
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073481721C73F30800902180 /* WallamarvelTests.swift in Sources */,
+				073541031C751F6A00ECCAAC /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

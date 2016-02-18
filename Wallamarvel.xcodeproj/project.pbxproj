@@ -17,6 +17,7 @@
 		076D33EC1C76699100826E88 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33EB1C76699100826E88 /* CharactersViewController.swift */; };
 		076D33ED1C76699100826E88 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33EB1C76699100826E88 /* CharactersViewController.swift */; };
 		076D33F11C7677A200826E88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076D33F31C7677A200826E88 /* Localizable.strings */; };
+		B833ED84207EBBFB514A4A2D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12020E3F104F99C546FF89B0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,9 @@
 		076D33E91C76532E00826E88 /* CharacterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
 		076D33EB1C76699100826E88 /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		076D33F21C7677A200826E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		12020E3F104F99C546FF89B0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B833ED84207EBBFB514A4A2D /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,8 @@
 				0734815B1C73F30800902180 /* Wallamarvel */,
 				073481701C73F30800902180 /* WallamarvelTests */,
 				0734815A1C73F30800902180 /* Products */,
+				A2718A451BE9642FC3F9BFF2 /* Pods */,
+				C40312B4201A6CAACE882FAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +167,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A2718A451BE9642FC3F9BFF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */,
+				EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C40312B4201A6CAACE882FAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12020E3F104F99C546FF89B0 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 073481761C73F30800902180 /* Build configuration list for PBXNativeTarget "Wallamarvel" */;
 			buildPhases = (
+				BA37DA02504162ACF5245837 /* Check Pods Manifest.lock */,
 				073481551C73F30800902180 /* Sources */,
 				073481561C73F30800902180 /* Frameworks */,
 				073481571C73F30800902180 /* Resources */,
+				A8313FF3A0358A6316B1A933 /* Embed Pods Frameworks */,
+				00E9E6B43BE4FAB5A9928EFA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00E9E6B43BE4FAB5A9928EFA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8313FF3A0358A6316B1A933 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA37DA02504162ACF5245837 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		073481551C73F30800902180 /* Sources */ = {
@@ -401,6 +476,7 @@
 		};
 		073481771C73F30800902180 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wallamarvel/Info.plist;
@@ -412,6 +488,7 @@
 		};
 		073481781C73F30800902180 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wallamarvel/Info.plist;

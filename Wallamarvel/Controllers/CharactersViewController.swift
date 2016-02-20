@@ -23,7 +23,9 @@ class CharactersViewController: UITableViewController {
 
         self.title = NSLocalizedString("CharactersViewControllerTitle", comment: "Characters list title")
         
-        request(Router.Characters(0)).responseJSON() { response in
+        request(Router.CharactersPage(0))
+            .validate()
+            .responseJSON { response in
             switch response.result {
             case .Success:
                 if let newCharacters = MarvelStore.sharedInstance.getCharactersFromResponse(response) {

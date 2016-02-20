@@ -19,6 +19,8 @@
 		076D33F11C7677A200826E88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076D33F31C7677A200826E88 /* Localizable.strings */; };
 		076D33F61C7686FE00826E88 /* MarvelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33F51C7686FE00826E88 /* MarvelStore.swift */; };
 		076D33F71C7686FE00826E88 /* MarvelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33F51C7686FE00826E88 /* MarvelStore.swift */; };
+		078F70881C789FDC00509BFD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F70871C789FDC00509BFD /* Router.swift */; };
+		078F70891C789FDC00509BFD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F70871C789FDC00509BFD /* Router.swift */; };
 		23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,7 @@
 		076D33EB1C76699100826E88 /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		076D33F21C7677A200826E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		076D33F51C7686FE00826E88 /* MarvelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelStore.swift; sourceTree = "<group>"; };
+		078F70871C789FDC00509BFD /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.release.xcconfig"; sourceTree = "<group>"; };
 		4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 		0734815B1C73F30800902180 /* Wallamarvel */ = {
 			isa = PBXGroup;
 			children = (
+				0734815C1C73F30800902180 /* AppDelegate.swift */,
+				078F70861C789FCA00509BFD /* Service */,
 				073481831C73FBCB00902180 /* Models */,
 				073481841C73FC2E00902180 /* Views */,
 				073481861C73FC6F00902180 /* Controllers */,
@@ -151,7 +156,6 @@
 		073481881C73FCB100902180 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0734815C1C73F30800902180 /* AppDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -171,6 +175,14 @@
 				076D33F31C7677A200826E88 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		078F70861C789FCA00509BFD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				078F70871C789FDC00509BFD /* Router.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		A2718A451BE9642FC3F9BFF2 /* Pods */ = {
@@ -347,6 +359,7 @@
 			files = (
 				076D33F61C7686FE00826E88 /* MarvelStore.swift in Sources */,
 				076D33EC1C76699100826E88 /* CharactersViewController.swift in Sources */,
+				078F70881C789FDC00509BFD /* Router.swift in Sources */,
 				073541021C751F6A00ECCAAC /* Character.swift in Sources */,
 				0734815D1C73F30800902180 /* AppDelegate.swift in Sources */,
 			);
@@ -358,6 +371,7 @@
 			files = (
 				076D33F71C7686FE00826E88 /* MarvelStore.swift in Sources */,
 				076D33EA1C76532E00826E88 /* CharacterTests.swift in Sources */,
+				078F70891C789FDC00509BFD /* Router.swift in Sources */,
 				073541031C751F6A00ECCAAC /* Character.swift in Sources */,
 				076D33ED1C76699100826E88 /* CharactersViewController.swift in Sources */,
 			);

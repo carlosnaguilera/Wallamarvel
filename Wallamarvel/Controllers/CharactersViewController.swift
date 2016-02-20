@@ -7,23 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
  /// ViewController to display a list of Marvel characters
 
 class CharactersViewController: UITableViewController {
     
     var characters = [Character]()
-    
-    // Method to delete
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        self.characters.append(Character(id: 1009144, name: "A.I.M.", description: "AIM is a terrorist organization bent on destroying the world.",imagePath: "http://i.annihil.us/u/prod/marvel/i/mg/6/20/52602f21f29ec", imageExtension: "jpg")!)
-        self.characters.append(Character(id: 1010699, name: "Aaron Stack", description: "",imagePath: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", imageExtension: "jpg")!)
-        self.characters.append(Character(id: 1009146, name: "Abomination (Emil Blonsky)", description: "Formerly known as Emil Blonsky, a spy of Soviet Yugoslavian origin working for the KGB, the Abomination gained his powers after receiving a dose of gamma radiation similar to that which transformed Bruce Banner into the incredible Hulk.",imagePath: "http://i.annihil.us/u/prod/marvel/i/mg/9/50/4ce18691cbf04", imageExtension: "jpg")!)
-    }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +22,19 @@ class CharactersViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         self.title = NSLocalizedString("CharactersViewControllerTitle", comment: "Characters list title")
+        
+        request(Router.Characters(0)).responseJSON() { response in
+            switch response.result {
+            case .Success:
+                if let newCharacters = MarvelStore.sharedInstance.getCharactersFromResponse(response) {
+                    self.characters.appendContentsOf(newCharacters)
+                    self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
+            case .Failure(let error):
+                print(error)
+            }
+
+        }
     }
 
     override func didReceiveMemoryWarning() {

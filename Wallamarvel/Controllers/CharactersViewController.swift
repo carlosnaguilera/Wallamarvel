@@ -11,12 +11,18 @@ import Alamofire
 
  /// ViewController to display a list of Marvel characters
 
-class CharactersViewController: UITableViewController {
+class CharactersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // We use an ordered set to avoid having duplicates when paginating
     var characters = NSMutableOrderedSet()
     var populatingCharacters = false
     var currentPage = 1
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var retryButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,8 @@ class CharactersViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         self.title = NSLocalizedString("CharactersViewControllerTitle", comment: "Characters list title")
+        self.noDataLabel.text = NSLocalizedString("NoDataLabel", comment: "No data label text")
+        self.retryButton.setTitle(NSLocalizedString("RetryButton", comment: "Retry button"), forState: UIControlState.Normal)
         populateCharacters()
         
     }
@@ -35,11 +43,11 @@ class CharactersViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if populatingCharacters {
             return self.characters.count + 1
         }
@@ -50,7 +58,7 @@ class CharactersViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell
         
@@ -67,11 +75,18 @@ class CharactersViewController: UITableViewController {
     
     // MARK: ScrollViewDelegate
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
             populateCharacters()
         }
     }
+    
+    // MARK: Buttons
+    
+    @IBAction func retryButtonTouched(sender: AnyObject) {
+        populateCharacters()
+    }
+    
     
     // MARK: Private methods
     
@@ -79,8 +94,13 @@ class CharactersViewController: UITableViewController {
         if populatingCharacters {
             return
         }
-        
         populatingCharacters = true
+        // Hide placeholder if needed
+        if placeholderView.alpha != 0 {
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.placeholderView.alpha = 0.0
+            })
+        }
         let lastItem = self.characters.count
         
         let loaderIndexPath = NSIndexPath(forRow: lastItem, inSection: 0)
@@ -110,6 +130,13 @@ class CharactersViewController: UITableViewController {
                 }
                 self.populatingCharacters = false
                 self.tableView.endUpdates()
+                
+                // Show placeholder if needed
+                if self.characters.count == 0 {
+                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                        self.placeholderView.alpha = 1.0
+                    })
+                }
         }
     }
 }

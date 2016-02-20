@@ -9,3 +9,5 @@
 // CharactersViewController
 
 "CharactersViewControllerTitle" = "Characters";
+"NoDataLabel" = "Ups! No data available... Please, check the internet connection";
+"RetryButton" = "Retry";

@@ -40,22 +40,35 @@ class CharactersViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.characters.count
+        if populatingCharacters {
+            return self.characters.count + 1
+        }
+        else {
+            return self.characters.count
+        }
+        
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("characterCell", forIndexPath: indexPath)
         
-        let character = self.characters[indexPath.row]
-        cell.textLabel?.text = character.name;
+        let cell: UITableViewCell
+        
+        if indexPath.row == characters.count {
+           cell = tableView.dequeueReusableCellWithIdentifier("activityIndicatorCell", forIndexPath: indexPath)
+        }
+        else {
+            cell = tableView.dequeueReusableCellWithIdentifier("characterCell", forIndexPath: indexPath)
+            let character = self.characters[indexPath.row]
+            cell.textLabel?.text = character.name;
+        }
         return cell
     }
     
     // MARK: ScrollViewDelegate
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height * 0.8 {
+        if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
             populateCharacters()
         }
     }
@@ -68,6 +81,11 @@ class CharactersViewController: UITableViewController {
         }
         
         populatingCharacters = true
+        let lastItem = self.characters.count
+        
+        let loaderIndexPath = NSIndexPath(forRow: lastItem, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([loaderIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        self.tableView .scrollToRowAtIndexPath(loaderIndexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         
         request(Router.CharactersPage(self.currentPage))
             .validate()
@@ -75,16 +93,23 @@ class CharactersViewController: UITableViewController {
                 switch response.result {
                 case .Success:
                     if let newCharacters = MarvelStore.sharedInstance.getCharactersFromResponse(response) {
-                        let lastItem = self.characters.count
                         self.characters.addObjectsFromArray(newCharacters)
-                        let indexPaths = (lastItem..<self.characters.count).map { NSIndexPath(forRow: $0, inSection: 0) }
-                        self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
                         self.currentPage++
                     }
                 case .Failure(let error):
                     NSLog(error.description)
                 }
+                // Refresh UI
+                self.tableView.beginUpdates()
+                // remove activity indicator cell
+                self.tableView.deleteRowsAtIndexPaths([loaderIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                // add new cells if necessary
+                if (lastItem != self.characters.count) {
+                    let indexPaths = (lastItem..<self.characters.count).map { NSIndexPath(forRow: $0, inSection: 0) }
+                    self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+                }
                 self.populatingCharacters = false
+                self.tableView.endUpdates()
         }
     }
 }

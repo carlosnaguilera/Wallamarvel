@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="YQV-dD-L8j">
-                            <rect key="frame" x="0.0" y="136" width="600" height="1"/>
+                            <rect key="frame" x="0.0" y="180" width="600" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -35,6 +35,26 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityIndicatorCell" id="mDV-P2-u1o" customClass="ActivityIndicatorCell" customModule="Wallamarvel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mDV-P2-u1o" id="8L6-It-O0D">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="i1h-VM-0x7">
+                                            <rect key="frame" x="290" y="12" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="i1h-VM-0x7" firstAttribute="centerY" secondItem="8L6-It-O0D" secondAttribute="centerY" id="3cY-jB-CgZ"/>
+                                        <constraint firstItem="i1h-VM-0x7" firstAttribute="centerX" secondItem="8L6-It-O0D" secondAttribute="centerX" id="jqZ-Su-jhd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityIndicatorView" destination="i1h-VM-0x7" id="86U-Wk-TkZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

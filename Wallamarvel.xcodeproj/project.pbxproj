@@ -20,7 +20,6 @@
 		076D33F61C7686FE00826E88 /* MarvelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33F51C7686FE00826E88 /* MarvelStore.swift */; };
 		076D33F71C7686FE00826E88 /* MarvelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33F51C7686FE00826E88 /* MarvelStore.swift */; };
 		23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */; };
-		B833ED84207EBBFB514A4A2D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12020E3F104F99C546FF89B0 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		076D33EB1C76699100826E88 /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		076D33F21C7677A200826E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		076D33F51C7686FE00826E88 /* MarvelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelStore.swift; sourceTree = "<group>"; };
-		12020E3F104F99C546FF89B0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.release.xcconfig"; sourceTree = "<group>"; };
 		4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B833ED84207EBBFB514A4A2D /* Pods.framework in Frameworks */,
 				23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,7 +187,6 @@
 		C40312B4201A6CAACE882FAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				12020E3F104F99C546FF89B0 /* Pods.framework */,
 				9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */,
 			);
 			name = Frameworks;

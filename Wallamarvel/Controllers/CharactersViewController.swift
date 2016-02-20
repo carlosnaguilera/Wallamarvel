@@ -13,30 +13,19 @@ import Alamofire
 
 class CharactersViewController: UITableViewController {
     
-    var characters = [Character]()
+    // We use an ordered set to avoid having duplicates when paginating
+    var characters = NSMutableOrderedSet()
+    var populatingCharacters = false
+    var currentPage = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         self.title = NSLocalizedString("CharactersViewControllerTitle", comment: "Characters list title")
+        populateCharacters()
         
-        request(Router.CharactersPage(0))
-            .validate()
-            .responseJSON { response in
-            switch response.result {
-            case .Success:
-                if let newCharacters = MarvelStore.sharedInstance.getCharactersFromResponse(response) {
-                    self.characters.appendContentsOf(newCharacters)
-                    self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
-                }
-            case .Failure(let error):
-                print(error)
-            }
-
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,5 +50,41 @@ class CharactersViewController: UITableViewController {
         let character = self.characters[indexPath.row]
         cell.textLabel?.text = character.name;
         return cell
+    }
+    
+    // MARK: ScrollViewDelegate
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height * 0.8 {
+            populateCharacters()
+        }
+    }
+    
+    // MARK: Private methods
+    
+    private func populateCharacters() {
+        if populatingCharacters {
+            return
+        }
+        
+        populatingCharacters = true
+        
+        request(Router.CharactersPage(self.currentPage))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    if let newCharacters = MarvelStore.sharedInstance.getCharactersFromResponse(response) {
+                        let lastItem = self.characters.count
+                        self.characters.addObjectsFromArray(newCharacters)
+                        let indexPaths = (lastItem..<self.characters.count).map { NSIndexPath(forRow: $0, inSection: 0) }
+                        self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+                        self.currentPage++
+                    }
+                case .Failure(let error):
+                    NSLog(error.description)
+                }
+                self.populatingCharacters = false
+        }
     }
 }

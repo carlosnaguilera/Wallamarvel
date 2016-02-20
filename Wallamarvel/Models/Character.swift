@@ -118,7 +118,7 @@ enum ImageVariant {
 
  /// Model class to store information of a Marvel character
 
-class Character {
+class Character: NSObject {
     
     // MARK: Properties
     
@@ -127,7 +127,7 @@ class Character {
     /// name of the character
     let name: String
     /// description of the character
-    let description: String?
+    let detail: String?
     /// "path" element from the image representation. It's not complete. We have to build the final url from it
     let imagePath: String?
     /// file extension of the character image
@@ -150,14 +150,26 @@ class Character {
         
         self.id = id
         self.name = name
-        self.description = description
+        self.detail = description
         self.imagePath = imagePath
         self.imageExtension = imageExtension
+        super.init()
         
         if name.isEmpty {
             return nil
         }
         
+    }
+    
+    // MARK: Overriden methods
+    
+    // Two characters are the same if they have the same id
+    override func isEqual(object: AnyObject?) -> Bool {
+        return (object as! Character).id == self.id
+    }
+    
+    override var hash: Int {
+        return (self as Character).id
     }
     
     // MARK: Helper methods

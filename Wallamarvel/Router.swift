@@ -15,7 +15,7 @@ enum Router: URLRequestConvertible {
     static let baseURLString = "https://gateway.marvel.com/v1/public"
     static let publicKey = "4076db26365bbdfe86886d00d50bb9d0"
     static let privateKey = "7ea204c124978d93f7a0723e24400622cb821aa3"
-    static let perPage = 20
+    static let perPage = 30
     
     /**
      *  URL to get Page page of characters api
@@ -34,10 +34,10 @@ enum Router: URLRequestConvertible {
             let ts = NSDate().timeIntervalSinceReferenceDate.description
             let hash = "\(ts)\(Router.privateKey)\(Router.publicKey)".md5()
             switch self {
-            case .CharactersPage(let page) where page > 0:
-                return("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash, "offset": Router.perPage*page])
+            case .CharactersPage(let page) where page > 1:
+                return("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash, "offset": Router.perPage*(page-1), "limit":Router.perPage])
             case .CharactersPage(_):
-                return ("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash])
+                return ("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash, "limit":Router.perPage])
             }
         }()
         

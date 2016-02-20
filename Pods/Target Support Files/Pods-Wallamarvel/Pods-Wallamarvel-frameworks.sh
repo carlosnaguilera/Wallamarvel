@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Wallamarvel/Alamofire.framework"
+  install_framework "Pods-Wallamarvel/AlamofireNetworkActivityIndicator.framework"
   install_framework "Pods-Wallamarvel/CryptoSwift.framework"
   install_framework "Pods-Wallamarvel/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Wallamarvel/Alamofire.framework"
+  install_framework "Pods-Wallamarvel/AlamofireNetworkActivityIndicator.framework"
   install_framework "Pods-Wallamarvel/CryptoSwift.framework"
   install_framework "Pods-Wallamarvel/SwiftyJSON.framework"
 fi

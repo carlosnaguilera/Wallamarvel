@@ -22,8 +22,6 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.noDataLabel.text = NSLocalizedString("NoDataLabel", comment: "No data label text")
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,9 +75,9 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
     
     - parameter urlRequest: request to get the needed characters
     */
-    func populateCharactersWithRequest(urlRequest:  URLRequestConvertible) {
+    func populateCharactersWithRequest(urlRequest:  URLRequestConvertible) -> Request? {
         if populatingCharacters {
-            return
+            return nil
         }
         populatingCharacters = true
         // Hide placeholder if needed
@@ -94,9 +92,11 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
         self.tableView.insertRowsAtIndexPaths([loaderIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         self.tableView .scrollToRowAtIndexPath(loaderIndexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         
-        request(urlRequest)
+        return request(urlRequest)
             .validate()
             .responseJSON { response in
+                var shouldShowPlaceholder = true
+                var placeholderText = NSLocalizedString("NoResults", comment: "")
                 switch response.result {
                 case .Success:
                     if let parsedCharactersResponse = MarvelStore.sharedInstance.getCharactersFromResponse(response) {
@@ -106,6 +106,11 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
                     }
                 case .Failure(let error):
                     NSLog(error.description)
+                    // Check if we need to show the placeholder. If it has been cancelled is not an error
+                    if error.code == NSURLErrorCancelled {
+                        shouldShowPlaceholder = false
+                    }
+                    placeholderText = NSLocalizedString("NoDataLabel", comment: "")
                 }
                 // Refresh UI
                 self.tableView.beginUpdates()
@@ -120,7 +125,8 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
                 self.tableView.endUpdates()
                 
                 // Show placeholder if needed
-                if self.characters.count == 0 {
+                if self.characters.count == 0 && shouldShowPlaceholder {
+                    self.noDataLabel.text = placeholderText
                     UIView.animateWithDuration(0.2, animations: { () -> Void in
                         self.placeholderView.alpha = 1.0
                     })

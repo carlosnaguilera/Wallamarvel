@@ -6,11 +6,12 @@
 //  Copyright © 2016 Qualoo Apps. All rights reserved.
 //
 
-import UIKit
+import Alamofire
 
 class CharactersSearchResultsViewController: BaseCharacterListViewController, UISearchBarDelegate {
     
     var searchString: String?
+    var currentRequest: Request?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,12 @@ class CharactersSearchResultsViewController: BaseCharacterListViewController, UI
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide placeholder view 
+        self.placeholderView.alpha = 0.0
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,7 +37,7 @@ class CharactersSearchResultsViewController: BaseCharacterListViewController, UI
     // MARK: Overriden methods
     override func populateCharacters() {
         if let text = searchString {
-            populateCharactersWithRequest(Router.CharactersStartingWithString(text, page: self.currentPage))
+            currentRequest = populateCharactersWithRequest(Router.CharactersStartingWithString(text, page: self.currentPage))
         }
     }
     
@@ -46,14 +53,26 @@ class CharactersSearchResultsViewController: BaseCharacterListViewController, UI
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        currentRequest?.cancel()
         reset()
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         // If the user clears the text we need to reset the controller
         if searchText == "" && searchText != searchString {
+            currentRequest?.cancel()
             reset()
         }
+    }
+    
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        // We don't let to do a new search until the current one has finished
+        return !populatingCharacters
+    }
+    
+    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        // We don't let to do a new search until the current one has finished
+        return !populatingCharacters
     }
     
     // MARK: Private helper methods

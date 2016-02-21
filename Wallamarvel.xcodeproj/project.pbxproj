@@ -150,8 +150,8 @@
 		073481861C73FC6F00902180 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				076D33EB1C76699100826E88 /* CharactersViewController.swift */,
 				07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */,
+				076D33EB1C76699100826E88 /* CharactersViewController.swift */,
 				07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */,
 			);
 			path = Controllers;

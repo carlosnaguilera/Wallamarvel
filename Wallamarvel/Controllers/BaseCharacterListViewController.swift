@@ -14,14 +14,16 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
     var characters = NSMutableOrderedSet()
     var populatingCharacters = false
     var currentPage = 1
+    var morePages = false
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var noDataLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.noDataLabel.text = NSLocalizedString("NoDataLabel", comment: "No data label text")
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,14 +65,19 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
     // MARK: ScrollViewDelegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
+        if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height && morePages{
             populateCharacters()
         }
     }
     
     // MARK: Helper methods
     
-    func populateCharacters() {
+    /**
+    Gets the characters from the server and updates the UI using the received urlRequest
+    
+    - parameter urlRequest: request to get the needed characters
+    */
+    func populateCharactersWithRequest(urlRequest:  URLRequestConvertible) {
         if populatingCharacters {
             return
         }
@@ -87,13 +94,14 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
         self.tableView.insertRowsAtIndexPaths([loaderIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         self.tableView .scrollToRowAtIndexPath(loaderIndexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         
-        request(Router.CharactersPage(self.currentPage))
+        request(urlRequest)
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success:
-                    if let newCharacters = MarvelStore.sharedInstance.getCharactersFromResponse(response) {
-                        self.characters.addObjectsFromArray(newCharacters)
+                    if let parsedCharactersResponse = MarvelStore.sharedInstance.getCharactersFromResponse(response) {
+                        self.characters.addObjectsFromArray(parsedCharactersResponse.newCharacters)
+                        self.morePages = parsedCharactersResponse.moreCharacters
                         self.currentPage++
                     }
                 case .Failure(let error):
@@ -118,5 +126,12 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
                     })
                 }
         }
+    }
+    
+    /**
+     Gets the needed characters from the server and updates the UI. This method must be implemented by subclasses
+     */
+    func populateCharacters() {
+        // Method to be implemented by subclasses
     }
 }

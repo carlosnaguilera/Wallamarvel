@@ -16,13 +16,14 @@ class MarvelStore {
     static let sharedInstance = MarvelStore()
     
     /**
-     Creates an array of characters parsing the received response. Return nil if response doesn't have a valid value or if the response doesn't contain any character
+     Creates an array of characters parsing the received response and a flag indicating if there are more data to retrieve. Return nil if response doesn't have a valid value or if the response doesn't contain any character
      
      - parameter response: response from the server
      
-     - returns: an array of characters parsing the received response
+     - returns: an array of characters parsing the received response and a flag indicating if there are more data to retrieve
      */
-    func getCharactersFromResponse(response: (Response<AnyObject, NSError>)) -> [Character]? {
+    
+    func getCharactersFromResponse(response: (Response<AnyObject, NSError>)) -> (newCharacters: [Character], moreCharacters: Bool)? {
         
         if let value = response.result.value {
             let json = JSON(value)
@@ -31,6 +32,8 @@ class MarvelStore {
             if characterDictionaries.count == 0 {
                 return nil
             }
+            
+            // Create new received characters
             var newCharacters = [Character]()
             
             for characterDictionary in characterDictionaries {
@@ -44,7 +47,17 @@ class MarvelStore {
                     }
                 }
             }
-            return newCharacters
+            
+            // Check if there are more characters to retrieved
+            var moreCharacters = false
+            let offset = json["data"]["offset"].intValue
+            let count = json["data"]["count"].intValue
+            let total = json["data"]["total"].intValue
+            if offset + count < total {
+                moreCharacters = true
+            }
+            
+            return (newCharacters, moreCharacters)
         }
         else {
             return nil

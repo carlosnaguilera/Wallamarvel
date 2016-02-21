@@ -27,6 +27,8 @@ enum Router: URLRequestConvertible {
     
     case CharactersPage(Int)
     
+    case CharactersStartingWithString(String, page: Int)
+    
     // MARK: URLRequestConvertible
     
     var URLRequest: NSMutableURLRequest {
@@ -38,6 +40,10 @@ enum Router: URLRequestConvertible {
                 return("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash, "offset": Router.perPage*(page-1), "limit":Router.perPage])
             case .CharactersPage(_):
                 return ("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash, "limit":Router.perPage])
+            case .CharactersStartingWithString(let startsWithText, let page) where page > 1:
+                return("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash, "offset": Router.perPage*(page-1), "limit":Router.perPage, "nameStartsWith":startsWithText])
+            case .CharactersStartingWithString(let startsWithText, _):
+                return("/characters", ["apikey": Router.publicKey, "ts": ts, "hash":hash, "limit":Router.perPage, "nameStartsWith":startsWithText])
             }
         }()
         
@@ -47,5 +53,4 @@ enum Router: URLRequestConvertible {
         
         return encoding.encode(URLRequest, parameters: result.parameters).0
     }
-    
 }

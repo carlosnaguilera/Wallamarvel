@@ -8,11 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		0734815D1C73F30800902180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734815C1C73F30800902180 /* AppDelegate.swift */; };
-		0734815F1C73F30800902180 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734815E1C73F30800902180 /* ViewController.swift */; };
 		073481621C73F30800902180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073481601C73F30800902180 /* Main.storyboard */; };
 		073481641C73F30800902180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073481631C73F30800902180 /* Assets.xcassets */; };
 		073481671C73F30800902180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073481651C73F30800902180 /* LaunchScreen.storyboard */; };
-		073481721C73F30800902180 /* WallamarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073481711C73F30800902180 /* WallamarvelTests.swift */; };
+		073541021C751F6A00ECCAAC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073541011C751F6A00ECCAAC /* Character.swift */; };
+		073541031C751F6A00ECCAAC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073541011C751F6A00ECCAAC /* Character.swift */; };
+		076D33EA1C76532E00826E88 /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33E91C76532E00826E88 /* CharacterTests.swift */; };
+		076D33EC1C76699100826E88 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33EB1C76699100826E88 /* CharactersViewController.swift */; };
+		076D33ED1C76699100826E88 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33EB1C76699100826E88 /* CharactersViewController.swift */; };
+		076D33F11C7677A200826E88 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076D33F31C7677A200826E88 /* Localizable.strings */; };
+		076D33F61C7686FE00826E88 /* MarvelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33F51C7686FE00826E88 /* MarvelStore.swift */; };
+		076D33F71C7686FE00826E88 /* MarvelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D33F51C7686FE00826E88 /* MarvelStore.swift */; };
+		078F70881C789FDC00509BFD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F70871C789FDC00509BFD /* Router.swift */; };
+		078F70891C789FDC00509BFD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F70871C789FDC00509BFD /* Router.swift */; };
+		078F708B1C78ECA700509BFD /* ActivityIndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F708A1C78ECA700509BFD /* ActivityIndicatorCell.swift */; };
+		078F708C1C78ECA700509BFD /* ActivityIndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F708A1C78ECA700509BFD /* ActivityIndicatorCell.swift */; };
+		07FB4BED1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */; };
+		07FB4BEE1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */; };
+		07FB4BF01C79EE38001C3338 /* BaseCharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */; };
+		07FB4BF11C79EE38001C3338 /* BaseCharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */; };
+		07FB4BF31C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */; };
+		07FB4BF41C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */; };
+		23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +45,27 @@
 /* Begin PBXFileReference section */
 		073481591C73F30800902180 /* Wallamarvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallamarvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0734815C1C73F30800902180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0734815E1C73F30800902180 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		073481611C73F30800902180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		073481631C73F30800902180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073481661C73F30800902180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073481681C73F30800902180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0734816D1C73F30800902180 /* WallamarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WallamarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		073481711C73F30800902180 /* WallamarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallamarvelTests.swift; sourceTree = "<group>"; };
 		073481731C73F30800902180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073541011C751F6A00ECCAAC /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		076D33E91C76532E00826E88 /* CharacterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
+		076D33EB1C76699100826E88 /* CharactersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		076D33F21C7677A200826E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		076D33F51C7686FE00826E88 /* MarvelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelStore.swift; sourceTree = "<group>"; };
+		078F70871C789FDC00509BFD /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		078F708A1C78ECA700509BFD /* ActivityIndicatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCell.swift; sourceTree = "<group>"; };
+		07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersSearchResultsViewController.swift; sourceTree = "<group>"; };
+		07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCharacterListViewController.swift; sourceTree = "<group>"; };
+		07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.release.xcconfig"; sourceTree = "<group>"; };
+		4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.debug.xcconfig"; sourceTree = "<group>"; };
+		9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wallamarvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +93,8 @@
 				0734815B1C73F30800902180 /* Wallamarvel */,
 				073481701C73F30800902180 /* WallamarvelTests */,
 				0734815A1C73F30800902180 /* Products */,
+				A2718A451BE9642FC3F9BFF2 /* Pods */,
+				C40312B4201A6CAACE882FAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +110,15 @@
 		0734815B1C73F30800902180 /* Wallamarvel */ = {
 			isa = PBXGroup;
 			children = (
+				0734815C1C73F30800902180 /* AppDelegate.swift */,
+				078F70861C789FCA00509BFD /* Service */,
 				073481831C73FBCB00902180 /* Models */,
 				073481841C73FC2E00902180 /* Views */,
 				073481861C73FC6F00902180 /* Controllers */,
 				073481871C73FC8B00902180 /* Stores */,
 				073481881C73FCB100902180 /* Helpers */,
 				073481891C73FDB900902180 /* User Interface */,
+				076D33EE1C76730C00826E88 /* Resources */,
 				073481631C73F30800902180 /* Assets.xcassets */,
 				073481681C73F30800902180 /* Info.plist */,
 			);
@@ -92,7 +128,7 @@
 		073481701C73F30800902180 /* WallamarvelTests */ = {
 			isa = PBXGroup;
 			children = (
-				073481711C73F30800902180 /* WallamarvelTests.swift */,
+				076D33E91C76532E00826E88 /* CharacterTests.swift */,
 				073481731C73F30800902180 /* Info.plist */,
 			);
 			path = WallamarvelTests;
@@ -101,6 +137,7 @@
 		073481831C73FBCB00902180 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				073541011C751F6A00ECCAAC /* Character.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +145,7 @@
 		073481841C73FC2E00902180 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				078F708A1C78ECA700509BFD /* ActivityIndicatorCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,7 +153,10 @@
 		073481861C73FC6F00902180 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0734815E1C73F30800902180 /* ViewController.swift */,
+				07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */,
+				076D33EB1C76699100826E88 /* CharactersViewController.swift */,
+				07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */,
+				07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,6 +164,7 @@
 		073481871C73FC8B00902180 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				076D33F51C7686FE00826E88 /* MarvelStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -130,7 +172,6 @@
 		073481881C73FCB100902180 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0734815C1C73F30800902180 /* AppDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -144,6 +185,41 @@
 			name = "User Interface";
 			sourceTree = "<group>";
 		};
+		076D33EE1C76730C00826E88 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				076D33F31C7677A200826E88 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		078F70861C789FCA00509BFD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				078F70871C789FDC00509BFD /* Router.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		A2718A451BE9642FC3F9BFF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */,
+				EE7AA0674DB26E12ED769148 /* Pods.release.xcconfig */,
+				4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */,
+				2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C40312B4201A6CAACE882FAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 073481761C73F30800902180 /* Build configuration list for PBXNativeTarget "Wallamarvel" */;
 			buildPhases = (
+				BA37DA02504162ACF5245837 /* Check Pods Manifest.lock */,
 				073481551C73F30800902180 /* Sources */,
 				073481561C73F30800902180 /* Frameworks */,
 				073481571C73F30800902180 /* Resources */,
+				A8313FF3A0358A6316B1A933 /* Embed Pods Frameworks */,
+				00E9E6B43BE4FAB5A9928EFA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073481671C73F30800902180 /* LaunchScreen.storyboard in Resources */,
+				076D33F11C7677A200826E88 /* Localizable.strings in Resources */,
 				073481641C73F30800902180 /* Assets.xcassets in Resources */,
 				073481621C73F30800902180 /* Main.storyboard in Resources */,
 			);
@@ -240,12 +320,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00E9E6B43BE4FAB5A9928EFA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8313FF3A0358A6316B1A933 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA37DA02504162ACF5245837 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		073481551C73F30800902180 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0734815F1C73F30800902180 /* ViewController.swift in Sources */,
+				076D33F61C7686FE00826E88 /* MarvelStore.swift in Sources */,
+				076D33EC1C76699100826E88 /* CharactersViewController.swift in Sources */,
+				07FB4BED1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift in Sources */,
+				07FB4BF01C79EE38001C3338 /* BaseCharacterListViewController.swift in Sources */,
+				078F70881C789FDC00509BFD /* Router.swift in Sources */,
+				073541021C751F6A00ECCAAC /* Character.swift in Sources */,
+				078F708B1C78ECA700509BFD /* ActivityIndicatorCell.swift in Sources */,
+				07FB4BF31C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */,
 				0734815D1C73F30800902180 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,7 +389,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073481721C73F30800902180 /* WallamarvelTests.swift in Sources */,
+				076D33F71C7686FE00826E88 /* MarvelStore.swift in Sources */,
+				076D33EA1C76532E00826E88 /* CharacterTests.swift in Sources */,
+				07FB4BEE1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift in Sources */,
+				07FB4BF11C79EE38001C3338 /* BaseCharacterListViewController.swift in Sources */,
+				078F70891C789FDC00509BFD /* Router.swift in Sources */,
+				073541031C751F6A00ECCAAC /* Character.swift in Sources */,
+				078F708C1C78ECA700509BFD /* ActivityIndicatorCell.swift in Sources */,
+				07FB4BF41C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */,
+				076D33ED1C76699100826E88 /* CharactersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +426,14 @@
 				073481661C73F30800902180 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		076D33F31C7677A200826E88 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076D33F21C7677A200826E88 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -373,6 +524,7 @@
 		};
 		073481771C73F30800902180 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wallamarvel/Info.plist;
@@ -384,6 +536,7 @@
 		};
 		073481781C73F30800902180 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wallamarvel/Info.plist;

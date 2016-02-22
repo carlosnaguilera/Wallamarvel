@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (3.2.0)
+  - AlamofireImage (2.3.1):
+    - Alamofire (~> 3.1)
+  - AlamofireNetworkActivityIndicator (1.0.0):
+    - Alamofire (~> 3.2)
+  - CryptoSwift (0.2.3)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.2)
+  - AlamofireImage (~> 2.3)
+  - AlamofireNetworkActivityIndicator (~> 1.0)
+  - CryptoSwift (~> 0.2)
+  - SwiftyJSON (~> 2.3)
+
+SPEC CHECKSUMS:
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  AlamofireImage: 8256f88835f58257a76ea2738d3773be5057f7ed
+  AlamofireNetworkActivityIndicator: 34e6fe7ebb5d8df76cc55fbf83a6087ae6457344
+  CryptoSwift: b2bf37b8e7cc6d682ef3365cb966bc5ae5174aa5
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0

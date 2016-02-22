@@ -12,15 +12,14 @@ class CharactersSearchResultsViewController: BaseCharacterListViewController, UI
     
     var searchString: String?
     var currentRequest: Request?
+    /// Reference to the "owner" of this viewcontroller
+    var charactersListViewController: CharactersViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // The list and search results controllers will have the same delegate
+        delegate = charactersListViewController?.delegate
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,6 +72,16 @@ class CharactersSearchResultsViewController: BaseCharacterListViewController, UI
     func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         // We don't let to do a new search until the current one has finished
         return !populatingCharacters
+    }
+    
+    // MARK: TableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedCharacter = characters[indexPath.row] as! Character
+        delegate?.characterSelected(selectedCharacter)
+        if let detailViewController = self.delegate as? CharacterDetailViewController {
+            charactersListViewController?.splitViewController?.showDetailViewController(detailViewController.navigationController!, sender: nil)
+        }
     }
     
     // MARK: Private helper methods

@@ -27,6 +27,8 @@
 		07FB4BEE1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */; };
 		07FB4BF01C79EE38001C3338 /* BaseCharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */; };
 		07FB4BF11C79EE38001C3338 /* BaseCharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */; };
+		07FB4BF31C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */; };
+		07FB4BF41C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */; };
 		23C24E59B8E96F06EAFE5536 /* Pods_Wallamarvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFCF123DBA78378E2B6D58C /* Pods_Wallamarvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,7 @@
 		078F708A1C78ECA700509BFD /* ActivityIndicatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCell.swift; sourceTree = "<group>"; };
 		07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersSearchResultsViewController.swift; sourceTree = "<group>"; };
 		07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCharacterListViewController.swift; sourceTree = "<group>"; };
+		07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		1CBD2EF08B6A9D74E463A27F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2364A8ADB862C79DA1C75372 /* Pods-Wallamarvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.release.xcconfig"; sourceTree = "<group>"; };
 		4184EF99FC3B645816061C6C /* Pods-Wallamarvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wallamarvel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wallamarvel/Pods-Wallamarvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 				07FB4BEF1C79EE38001C3338 /* BaseCharacterListViewController.swift */,
 				076D33EB1C76699100826E88 /* CharactersViewController.swift */,
 				07FB4BEC1C79D6C6001C3338 /* CharactersSearchResultsViewController.swift */,
+				07FB4BF21C7A7954001C3338 /* CharacterDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -376,6 +380,7 @@
 				078F70881C789FDC00509BFD /* Router.swift in Sources */,
 				073541021C751F6A00ECCAAC /* Character.swift in Sources */,
 				078F708B1C78ECA700509BFD /* ActivityIndicatorCell.swift in Sources */,
+				07FB4BF31C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */,
 				0734815D1C73F30800902180 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +396,7 @@
 				078F70891C789FDC00509BFD /* Router.swift in Sources */,
 				073541031C751F6A00ECCAAC /* Character.swift in Sources */,
 				078F708C1C78ECA700509BFD /* ActivityIndicatorCell.swift in Sources */,
+				07FB4BF41C7A7954001C3338 /* CharacterDetailViewController.swift in Sources */,
 				076D33ED1C76699100826E88 /* CharactersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
         
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        splitViewController.preferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible
+        let leftNavController = splitViewController.viewControllers.first as! UINavigationController
+        let masterViewcontroller = leftNavController.topViewController as! CharactersViewController
+        let rightNavController = splitViewController.viewControllers.last as! UINavigationController
+        let detailViewController = rightNavController.topViewController as! CharacterDetailViewController
+        
+        // The list and the search results controller will use the same detail view controller
+        masterViewcontroller.delegate = detailViewController
+        
+        masterViewcontroller.splitViewController?.delegate = masterViewcontroller
+        
+        detailViewController.navigationItem.leftItemsSupplementBackButton = true
+        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+        
         return true
     }
 

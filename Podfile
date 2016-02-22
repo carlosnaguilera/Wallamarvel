@@ -6,6 +6,7 @@ target :Wallamarvel do
     pod 'CryptoSwift', '~> 0.2'
     pod 'SwiftyJSON', '~> 2.3'
     pod 'AlamofireNetworkActivityIndicator', '~> 1.0'
+    pod 'AlamofireImage', '~> 2.3'
 end
 
 target :WallamarvelTests do

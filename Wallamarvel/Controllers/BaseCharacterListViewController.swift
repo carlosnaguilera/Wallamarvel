@@ -8,6 +8,16 @@
 
 import Alamofire
 
+protocol CharacterSelectionDelegate: class {
+    
+    /**
+     Tells the delegate that a character was selected
+     
+     - parameter newCharacter: selected character
+     */
+    func characterSelected(newCharacter: Character)
+}
+
 class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // We use an ordered set to avoid having duplicates when paginating
@@ -15,6 +25,8 @@ class BaseCharacterListViewController: UIViewController, UITableViewDelegate, UI
     var populatingCharacters = false
     var currentPage = 1
     var morePages = false
+    
+    weak var delegate: CharacterSelectionDelegate?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var placeholderView: UIView!
